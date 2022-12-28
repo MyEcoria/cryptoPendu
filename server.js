@@ -44,6 +44,11 @@ app.post('/guess', (req, res) => {
   }
 });
 
+app.get('/', (req, res) => {
+  // Affichez le fichier index.html
+  res.sendFile(`${__dirname}/public/index.html`);
+});
+
 app.listen(4000, () => {
   console.log('Le serveur écoute sur le port 4000 !');
 });
