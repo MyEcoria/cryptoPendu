@@ -5,7 +5,7 @@ const app = express();
 const words = ['banane', 'pomme', 'orange', 'cerise', 'kiwi'];
 
 // Choisissez un mot au hasard
-const word = words[Math.floor(Math.random() * words.length)];
+let word = words[Math.floor(Math.random() * words.length)];
 
 // Initialisez le compteur de coups restants à 10
 let remainingGuesses = 10;
@@ -37,6 +37,13 @@ app.post('/guess', (req, res) => {
       // Vérifiez si le joueur a perdu
       if (remainingGuesses === 0) {
         res.send('Désolé, vous avez perdu !');
+
+        // Choisissez un nouveau mot au hasard
+        word = words[Math.floor(Math.random() * words.length)];
+
+        // Réinitialisez le compteur de coups restants et le tableau de lettres devinées
+        remainingGuesses = 10;
+        guessedLetters = [];
       } else {
         res.send('Désolé, vous n\'avez pas trouvé de lettre');
       }
@@ -49,6 +56,6 @@ app.get('/', (req, res) => {
   res.sendFile(`${__dirname}/public/index.html`);
 });
 
-app.listen(4000, () => {
-  console.log('Le serveur écoute sur le port 4000 !');
+app.listen(3000, () => {
+  console.log('Le serveur écoute sur le port 3000 !');
 });
