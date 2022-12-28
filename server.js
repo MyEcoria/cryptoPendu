@@ -45,5 +45,5 @@ app.post('/guess', (req, res) => {
 });
 
 app.listen(4000, () => {
-  console.log('Le serveur écoute sur le port 3000 !');
+  console.log('Le serveur écoute sur le port 4000 !');
 });
