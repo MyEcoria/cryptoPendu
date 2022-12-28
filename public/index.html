@@ -2,15 +2,59 @@
 <html>
   <head>
     <title>Jeu de pendu</title>
+    <style>
+      /* Ajoutez votre CSS ici */
+      body {
+        background-color: lightblue;
+      }
+
+      h1 {
+        color: blue;
+        text-align: center;
+      }
+
+      .container {
+        width: 400px;
+        margin: 0 auto;
+        border: 1px solid black;
+        padding: 20px;
+      }
+
+      .displayed-word {
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
+
+      .remaining-guesses {
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
+
+      form {
+        display: flex;
+        align-items: center;
+      }
+
+      input[type='text'] {
+        width: 50px;
+        margin-right: 10px;
+      }
+
+      input[type='submit'] {
+        width: 80px;
+      }
+    </style>
   </head>
   <body>
-    <p id="displayed-word"></p>
-    <p id="remaining-guesses"></p>
-    <form id="guess-form">
-      <label for="letter">Devinez une lettre :</label><br>
-      <input type="text" id="letter" name="letter"><br>
-      <button type="submit">Envoyer</button>
-    </form> 
-    <script src="main.js"></script>
+    <div class="container">
+      <h1>Jeu de pendu</h1>
+      <div id="displayed-word" class="displayed-word"></div>
+      <div id="remaining-guesses" class="remaining-guesses"></div>
+      <form id="guess-form">
+        <input type="text" id="letter" maxlength="1">
+        <input type="submit" value="Deviner">
+      </form>
+    </div>
+    <script src="/main.js"></script>
   </body>
 </html>
