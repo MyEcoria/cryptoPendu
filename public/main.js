@@ -21,5 +21,10 @@ document.getElementById('guess-form').addEventListener('submit', (event) => {
       // Mettez à jour l'affichage du mot à deviner et du nombre de coups restants
       displayedWordEl.textContent = `Mot à deviner : ${displayedWord}`;
       remainingGuessesEl.textContent = `Coups restants : ${remainingGuesses}`;
+
+      // Si le mot entier a été deviné, affichez une alerte de réussite
+      if (displayedWord === word) {
+        alert('Félicitations, vous avez trouvé le mot !');
+      }
     });
 });
